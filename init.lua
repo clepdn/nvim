@@ -4,5 +4,6 @@ vim.g.markdown_fenced_languages = {
 	"ts=typescript"
 }
 
-require'lspconfig'.denols.setup{}
-require'lspconfig'.svelte.setup{}
+-- require'lspconfig'.denols.setup{}
+-- require'lspconfig'.svelte.setup{}
+require'lspconfig'.eslint.setup{}
