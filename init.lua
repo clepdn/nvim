@@ -7,3 +7,4 @@ vim.g.markdown_fenced_languages = {
 -- require'lspconfig'.denols.setup{}
 -- require'lspconfig'.svelte.setup{}
 require'lspconfig'.eslint.setup{}
+require'lspconfig'.ts_ls.setup{}
