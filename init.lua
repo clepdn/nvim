@@ -24,7 +24,4 @@ vim.g.markdown_fenced_languages = {
 require'lspconfig'.ts_ls.setup{}
 require'lspconfig'.clangd.setup{}
 
---[=====[
---]=====]
-
-
+vim.cmd 'colorscheme habamax'
