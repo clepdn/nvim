@@ -8,6 +8,10 @@ vim.keymap.set('n', '<leader>d', function()
 					vim.diagnostic.open_float()
 				end)
 
+vim.keymap.set("n", "<leader>f", function()
+	require("telescope").extensions.file_browser.file_browser()
+end, { noremap = true })
+
 -- ai slop bind - verify if ture
 vim.keymap.set('n', 'gy', ':tabp<CR>', { noremap = true, silent = true })
 
