@@ -1,3 +1,3 @@
 return {
-	url = "git@github.com:neovim/nvim-lspconfig.git"
+	url = "https://github.com/neovim/nvim-lspconfig.git"
 }

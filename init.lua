@@ -17,7 +17,11 @@ vim.keymap.set('n', 'gy', ':tabp<CR>', { noremap = true, silent = true })
 
 require('config.lazy')
 
-vim.cmd('source ~/.config/nvim/vimbindings.vim') -- escape hatch
+-- vim.cmd('source ~/.config/nvim/vimbindings.vim') -- escape hatch
+
+vim.opt.relativenumber = true
+vim.opt.number = true
+vim.opt.splitright = true
 
 vim.g.markdown_fenced_languages = {
 	"ts=typescript",
