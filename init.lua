@@ -8,6 +8,8 @@ vim.keymap.set('n', '<leader>d', function()
 					vim.diagnostic.open_float()
 				end)
 
+vim.keymap.set('n', '<leader>D', '<cmd>Telescope diagnostics bufnr=0<cr>', { desc = 'list all found diagnostics in current buffer' })
+
 vim.keymap.set("n", "<leader>f", function()
 	require("telescope").extensions.file_browser.file_browser()
 end, { noremap = true })
@@ -31,5 +33,6 @@ vim.g.markdown_fenced_languages = {
 -- require'lspconfig'.eslint.setup{}
 require'lspconfig'.ts_ls.setup{}
 require'lspconfig'.clangd.setup{}
+require'lspconfig'.pylsp.setup{}
 
 vim.cmd 'colorscheme habamax'
