@@ -35,4 +35,18 @@ require'lspconfig'.ts_ls.setup{}
 require'lspconfig'.clangd.setup{}
 require'lspconfig'.pylsp.setup{}
 
+-- the docs do this in a new way for some reason?
+vim.lsp.config('rust_analyzer', {
+	settings = {
+		['rust-analyzer'] = {
+			diagnostics = {
+				enable = false;
+			}
+		}
+	}
+})
+
+vim.lsp.enable('rust_analyzer')
+
+
 vim.cmd 'colorscheme habamax'
