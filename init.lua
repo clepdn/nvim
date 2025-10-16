@@ -4,6 +4,10 @@ vim.opt.clipboard:append("unnamedplus")
 
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 
+vim.keymap.set('n', '<leader>i', function()
+	vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+end, { desc = 'Toggle inlay hints' })
+
 vim.keymap.set('n', '<leader>d', function() 
 					vim.diagnostic.open_float()
 				end)
