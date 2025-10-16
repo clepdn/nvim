@@ -30,6 +30,8 @@ vim.g.markdown_fenced_languages = {
 	"tsx=typescript"
 }
 
+vim.lsp.inlay_hint.enable(true)
+
 -- require'lspconfig'.eslint.setup{}
 require'lspconfig'.ts_ls.setup{}
 require'lspconfig'.clangd.setup{}
@@ -40,7 +42,21 @@ vim.lsp.config('rust_analyzer', {
 	settings = {
 		['rust-analyzer'] = {
 			diagnostics = {
-				enable = false;
+				enable = true;
+			},
+			inlayHints = {
+				enable = true,
+				chainingHints = {
+					enable = true,
+				},
+				typeHints = {
+					enable = true,
+					hideClosureInitialization = false,
+					hideNamedConstructor = false,
+				},
+				parameterHints = {
+					enable = true,
+				},
 			}
 		}
 	}
