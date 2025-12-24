@@ -14,6 +14,10 @@ vim.keymap.set("n", "<leader>f", function()
 	require("telescope").extensions.file_browser.file_browser()
 end, { noremap = true })
 
+vim.keymap.set('n', '<leader>i', function()
+	vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+end)
+
 -- ai slop bind - verify if ture
 vim.keymap.set('n', 'gy', ':tabp<CR>', { noremap = true, silent = true })
 
@@ -63,6 +67,7 @@ vim.lsp.config('rust_analyzer', {
 })
 
 vim.lsp.enable('rust_analyzer')
+vim.lsp.enable('nixd')
 
 
 vim.cmd 'colorscheme habamax'
