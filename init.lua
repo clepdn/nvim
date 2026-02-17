@@ -25,6 +25,17 @@ end)
 -- ai slop bind - verify if ture
 vim.keymap.set('n', 'gy', ':tabp<CR>', { noremap = true, silent = true })
 
+-- LSP hover on current token
+vim.keymap.set('n', '<leader>h', vim.lsp.buf.hover, { desc = 'LSP Hover' })
+
+-- Detailed LSP inspect on current token
+vim.keymap.set('n', '<leader>H', function()
+  local params = vim.lsp.util.make_position_params()
+  local result = vim.lsp.buf_request_sync(0, 'textDocument/hover', params, 1000)
+  print(vim.inspect(result))
+end, { desc = 'LSP Inspect token' })
+
+
 require('config.lazy')
 
 -- vim.cmd('source ~/.config/nvim/vimbindings.vim') -- escape hatch
@@ -41,9 +52,9 @@ vim.g.markdown_fenced_languages = {
 vim.lsp.inlay_hint.enable(true)
 
 -- require'lspconfig'.eslint.setup{}
-require'lspconfig'.ts_ls.setup{}
-require'lspconfig'.clangd.setup{}
-require'lspconfig'.pylsp.setup{}
+-- require'lspconfig'.ts_ls.setup{}
+-- require'lspconfig'.clangd.setup{}
+-- require'lspconfig'.pylsp.setup{}
 
 -- the docs do this in a new way for some reason?
 vim.lsp.config('rust_analyzer', {
@@ -70,8 +81,20 @@ vim.lsp.config('rust_analyzer', {
 	}
 })
 
+vim.lsp.config('ts_ls', {
+  cmd = { "typescript-language-server", "--stdio" },
+  init_options = {
+    tsserver = {
+      path = "/usr/lib/node_modules/typescript/lib/tsserver.js"
+    }
+  }
+})
+
 vim.lsp.enable('rust_analyzer')
 vim.lsp.enable('nixd')
+vim.lsp.enable('ts_ls')
+vim.lsp.enable('pylsp')
+vim.lsp.enable('clangd')
 
 
 vim.cmd 'colorscheme habamax'
