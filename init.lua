@@ -35,6 +35,9 @@ vim.keymap.set('n', '<leader>H', function()
   print(vim.inspect(result))
 end, { desc = 'LSP Inspect token' })
 
+-- Visual studio "refactor"
+vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename)
+
 
 require('config.lazy')
 
