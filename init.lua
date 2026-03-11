@@ -2,7 +2,8 @@ vim.g.mapleader = '\\'
 
 vim.opt.clipboard:append("unnamedplus")
 
-vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
+-- According to claude this is unreliable if you don't use a term with the kitty keyboard protocol
+vim.keymap.set("t", "<C-Esc><C-Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 
 vim.keymap.set('n', '<leader>i', function()
 	vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
