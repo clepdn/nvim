@@ -117,4 +117,5 @@ vim.lsp.enable('pylsp')
 vim.lsp.enable('clangd')
 
 
-vim.cmd 'colorscheme habamax'
+-- vim.cmd 'colorscheme habamax'
+vim.cmd 'colorscheme evergarden-winter'
