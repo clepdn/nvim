@@ -35,6 +35,8 @@ vim.keymap.set("n", "<leader>f", function()
 	require("telescope").extensions.file_browser.file_browser()
 end, { noremap = true })
 
+vim.keymap.set('n', '<leader>bf', '<cmd>Telescope buffers<cr>', { desc = 'Find buffers' })
+
 vim.keymap.set('n', '<leader>i', function()
 	vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
 end)
